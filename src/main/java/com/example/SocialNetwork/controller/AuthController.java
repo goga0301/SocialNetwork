@@ -1,6 +1,8 @@
 package com.example.SocialNetwork.controller;
 
 
+import com.example.SocialNetwork.dto.AuthenticationResponse;
+import com.example.SocialNetwork.dto.LoginRequest;
 import com.example.SocialNetwork.dto.RegisterRequest;
 import com.example.SocialNetwork.service.AuthService;
 import lombok.AllArgsConstructor;
@@ -24,6 +26,12 @@ public class AuthController {
     public ResponseEntity<String> verification(@PathVariable String token){
         authService.verifyAccount(token);
         return new ResponseEntity<>("Account Activated!!",HttpStatus.OK);
+    }
+
+    @PostMapping("/login")
+    public AuthenticationResponse login(@RequestBody LoginRequest loginRequest){
+        return authService.login(loginRequest);
+
     }
 
 }

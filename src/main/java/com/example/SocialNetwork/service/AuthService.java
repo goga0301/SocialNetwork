@@ -1,5 +1,7 @@
 package com.example.SocialNetwork.service;
 
+import com.example.SocialNetwork.dto.AuthenticationResponse;
+import com.example.SocialNetwork.dto.LoginRequest;
 import com.example.SocialNetwork.dto.RegisterRequest;
 import com.example.SocialNetwork.exception.SocialNetworkException;
 import com.example.SocialNetwork.model.NotificationEmail;
@@ -7,7 +9,12 @@ import com.example.SocialNetwork.model.User;
 import com.example.SocialNetwork.model.VerificationToken;
 import com.example.SocialNetwork.repository.UserRepository;
 import com.example.SocialNetwork.repository.VerificationTokenRepository;
+import com.example.SocialNetwork.security.JwtProvider;
 import lombok.AllArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +32,8 @@ public class AuthService {
     private final UserRepository userRepository;
     private final VerificationTokenRepository verificationTokenRepository;
     private final MailService mailService;
+    private final AuthenticationManager authenticationManager;
+    private final JwtProvider jwtProvider;
 
     public void signup(RegisterRequest registerRequest){
         User user = new User();
@@ -63,5 +72,13 @@ public class AuthService {
         User user = userRepository.findByUsername(username).orElseThrow(() -> new SocialNetworkException("User Not Found!!"));
         user.setEnabled(true);
         userRepository.save(user);
+    }
+
+    public AuthenticationResponse login(LoginRequest loginRequest) {
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),loginRequest.getPassword()));
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String token = jwtProvider.generateToken(authentication);
+
+        return new AuthenticationResponse(token,loginRequest.getUsername());
     }
 }
