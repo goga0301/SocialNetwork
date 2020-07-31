@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1536735a-b3af-457c-a3e0-3f70c1d9e156" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/dto/CommentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/dto/CommentResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/mapper/CommentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/service/CommentService.java" afterDir="false" />
+    <list default="true" id="1536735a-b3af-457c-a3e0-3f70c1d9e156" name="Default Changelist" comment="Relationships API">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/controller/RelationshipController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/dto/RelationshipRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/dto/RelationshipResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/mapper/RelationshipMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/model/Relationship.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/repository/RelationshipRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/service/RelationshipService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/SocialNetwork/repository/CommentRepository.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +95,11 @@
       <workItem from="1595746428429" duration="1123000" />
       <workItem from="1595752641197" duration="9928000" />
       <workItem from="1595836910731" duration="20923000" />
-      <workItem from="1595921344526" duration="6269000" />
+      <workItem from="1595921344526" duration="7032000" />
+      <workItem from="1595957282969" duration="1253000" />
+      <workItem from="1596020296242" duration="16163000" />
+      <workItem from="1596104212943" duration="486000" />
+      <workItem from="1596179726499" duration="15395000" />
     </task>
     <task id="LOCAL-00001" summary="Register and Verification">
       <created>1595838601967</created>
@@ -117,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595875265900</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Comment API">
+      <created>1595934445203</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595934445203</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +155,9 @@
     <MESSAGE value="Register and Verification" />
     <MESSAGE value="Login and Validation" />
     <MESSAGE value="Post API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Post API" />
+    <MESSAGE value="Comment API" />
+    <MESSAGE value="Relationships API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Relationships API" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
